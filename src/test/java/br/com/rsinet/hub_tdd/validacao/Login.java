@@ -17,6 +17,7 @@ import br.com.rsinet.hub_tdd.leituraExcel.Constant;
 import br.com.rsinet.hub_tdd.leituraExcel.ExcelUtils;
 import br.com.rsinet.hub_tdd.pageObject.HomePage;
 import br.com.rsinet.hub_tdd.pageObject.PageNovoUsuario;
+import br.com.rsinet.hub_tdd.utility.Log;
 
 public class Login {
 	public WebDriver driver = new ChromeDriver();
@@ -25,11 +26,12 @@ public class Login {
 	public void antes() throws Exception {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("http://www.advantageonlineshopping.com/#/");
+		driver.get(Constant.URL);
 
 		PageFactory.initElements(driver, HomePage.class);
 		PageFactory.initElements(driver, PageNovoUsuario.class);
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
+		Log.info("Iniciou os elementos da pageObjet e o arquivo do excel");
 	}
 
 	@Test
@@ -53,6 +55,7 @@ public class Login {
 		PageNovoUsuario.postal.sendKeys(ExcelUtils.getCellData(1, 11));
 		PageNovoUsuario.aceita.click();
 		PageNovoUsuario.registrar.click();
+		Log.info("Cadastro feito com sucesso");
 	}
 
 	@After

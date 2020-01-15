@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-//
 public class HomePage {
 
 	@FindBy(how = How.ID, using = "menuUser")
@@ -28,10 +27,16 @@ public class HomePage {
 	@FindBy(how = How.ID, using = "autoComplete")
 	public static WebElement lupa2;
 
-	@FindBy(how = How.XPATH, using = "//*[@id=\"output\"]/div/div[2]/a[2]")
-	public static WebElement hp17;
-
 	@FindBy(how = How.ID, using = "miceImg")
 	public static WebElement mice;
+
+	@FindBy(how = How.XPATH, using = "/html/body/header/nav/ul/li[4]/a/div/div[2]/div/div[2]/a[1]")
+	public static WebElement verTudo;
+
+	@FindBy(how = How.XPATH, using = "/html/body/header/nav/ul/li[4]/a/div/div[1]/div/div/div")
+	public static WebElement fecharLupa;
+
+	@FindBy(how = How.ID, using = "7")
+	public static WebElement produto7;
 
 }

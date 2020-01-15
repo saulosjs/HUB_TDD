@@ -45,12 +45,14 @@ public class ExcelUtils {
 			} else {
 				Cell.setCellValue(Result);
 			}
-			FileOutputStream fileOut = new FileOutputStream(Constant.Path_TestData + Constant.File_TestData2);
+			FileOutputStream fileOut = new FileOutputStream(Constant.Path_TestData + Constant.File_TestData);
 			ExcelWBook.write(fileOut);
 			fileOut.flush();
 			fileOut.close();
+
 		} catch (Exception e) {
 			throw (e);
 		}
 	}
+
 }
