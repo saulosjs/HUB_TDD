@@ -12,12 +12,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import br.com.rsinet.hub_tdd.automacao.RobotPrint;
+import br.com.rsinet.hub_tdd.automacao.Cadastro;
 import br.com.rsinet.hub_tdd.leituraExcel.Constant;
-import br.com.rsinet.hub_tdd.leituraExcel.ExcelUtils;
 import br.com.rsinet.hub_tdd.pageObject.HomePage;
 import br.com.rsinet.hub_tdd.pageObject.PageNovoUsuario;
-import br.com.rsinet.hub_tdd.utility.Log;
 
 public class Login {
 	public WebDriver driver = new ChromeDriver();
@@ -30,8 +28,7 @@ public class Login {
 
 		PageFactory.initElements(driver, HomePage.class);
 		PageFactory.initElements(driver, PageNovoUsuario.class);
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		Log.info("Iniciou os elementos da pageObjet e o arquivo do excel");
+
 	}
 
 	@Test
@@ -40,27 +37,22 @@ public class Login {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		WebElement elemento = wait.until(ExpectedConditions.elementToBeClickable(HomePage.criarNovoUsuario));
 		elemento.click();
+		Cadastro.preencherCadastroPass(driver);
+	}
 
-		PageNovoUsuario.usuario.sendKeys(ExcelUtils.getCellData(1, 0));
-		PageNovoUsuario.email.sendKeys(ExcelUtils.getCellData(1, 1));
-		PageNovoUsuario.senha.sendKeys(ExcelUtils.getCellData(1, 2));
-		PageNovoUsuario.confirmar.sendKeys(ExcelUtils.getCellData(1, 3));
-		PageNovoUsuario.nome.sendKeys(ExcelUtils.getCellData(1, 4));
-		PageNovoUsuario.sobreNome.sendKeys(ExcelUtils.getCellData(1, 5));
-		PageNovoUsuario.telefone.sendKeys(ExcelUtils.getCellData(1, 6));
-		PageNovoUsuario.pais.sendKeys(ExcelUtils.getCellData(1, 7));
-		PageNovoUsuario.cidade.sendKeys(ExcelUtils.getCellData(1, 8));
-		PageNovoUsuario.endereco.sendKeys(ExcelUtils.getCellData(1, 9));
-		PageNovoUsuario.estado.sendKeys(ExcelUtils.getCellData(1, 10));
-		PageNovoUsuario.postal.sendKeys(ExcelUtils.getCellData(1, 11));
-		PageNovoUsuario.aceita.click();
-		PageNovoUsuario.registrar.click();
-		Log.info("Cadastro feito com sucesso");
+	@Test
+	public void cadastroFall() throws Exception {
+		HomePage.clickLogin.click();
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement elemento = wait.until(ExpectedConditions.elementToBeClickable(HomePage.criarNovoUsuario));
+		elemento.click();
+		Cadastro.preencherCadastroFall(driver);
+
 	}
 
 	@After
 	public void fim() {
-		RobotPrint.pegarTela();
+		// RobotPrint.pegarTela();
 		driver.close();
 	}
 
