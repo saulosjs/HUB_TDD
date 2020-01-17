@@ -11,9 +11,7 @@ public class PageCategoria {
 	private static WebElement elemento = null;
 
 	public static WebElement clickProduto(WebDriver driver) throws Exception {
-
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha3");
-
 		return elemento = driver.findElement(By.linkText(ExcelUtils.getCellData(10, 2)));
 	}
 
