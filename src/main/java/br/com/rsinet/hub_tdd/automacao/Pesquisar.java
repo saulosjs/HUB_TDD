@@ -21,26 +21,30 @@ public class Pesquisar {
 		PageFactory.initElements(driver, PageObjectMice.class);
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha3");
 
-		HomePage.clickNoProduto(driver).click();
+		HomePage.clickNoCampoDoProduto(driver).click();
 		WebElement element = driver.findElement(By.linkText(ExcelUtils.getCellData(1, 2)));
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 	}
 
-	public static void pelaLupa(WebDriver driver, int pos) throws Exception {
+	public static void pelaLupa(WebDriver driver, int pos) {
 
 		PageFactory.initElements(driver, HomePage.class);
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha2");
+		try {
+			ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha2");
 
-		HomePage.lupa.click();
-		WebElement enter = HomePage.txtLupa(driver);
-		enter.sendKeys(ExcelUtils.getCellData(pos, 0));
-		enter.sendKeys(Keys.ENTER);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			HomePage.lupa(driver).click();
+			WebElement enter = HomePage.txtLupa(driver);
+			enter.sendKeys(ExcelUtils.getCellData(pos, 0));
+			enter.sendKeys(Keys.ENTER);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		WebElement element = driver.findElement(By.linkText(ExcelUtils.getCellData(1, pos)));
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0].click();", element);
+			WebElement element = driver.findElement(By.linkText(ExcelUtils.getCellData(1, pos)));
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", element);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 
 	}
 

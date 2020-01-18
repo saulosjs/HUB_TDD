@@ -13,20 +13,20 @@ public class Cadastro {
 		PageFactory.initElements(driver, HomePage.class);
 		PageFactory.initElements(driver, PageNovoUsuario.class);
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		PageNovoUsuario.usuario.sendKeys(ExcelUtils.getCellData(1, 0));
-		PageNovoUsuario.email.sendKeys(ExcelUtils.getCellData(1, 1));
-		PageNovoUsuario.senha.sendKeys(ExcelUtils.getCellData(1, 2));
-		PageNovoUsuario.confirmar.sendKeys(ExcelUtils.getCellData(1, 3));
-		PageNovoUsuario.nome.sendKeys(ExcelUtils.getCellData(1, 4));
-		PageNovoUsuario.sobreNome.sendKeys(ExcelUtils.getCellData(1, 5));
-		PageNovoUsuario.telefone.sendKeys(ExcelUtils.getCellData(1, 6));
-		PageNovoUsuario.pais.sendKeys(ExcelUtils.getCellData(1, 7));
-		PageNovoUsuario.cidade.sendKeys(ExcelUtils.getCellData(1, 8));
-		PageNovoUsuario.endereco.sendKeys(ExcelUtils.getCellData(1, 9));
-		PageNovoUsuario.estado.sendKeys(ExcelUtils.getCellData(1, 10));
-		PageNovoUsuario.postal.sendKeys(ExcelUtils.getCellData(1, 11));
-		PageNovoUsuario.aceita.click();
-		PageNovoUsuario.registrar.click();
+		PageNovoUsuario.usuario(driver).sendKeys(ExcelUtils.getCellData(1, 0));
+		PageNovoUsuario.email(driver).sendKeys(ExcelUtils.getCellData(1, 1));
+		PageNovoUsuario.senha(driver).sendKeys(ExcelUtils.getCellData(1, 2));
+		PageNovoUsuario.confirmar(driver).sendKeys(ExcelUtils.getCellData(1, 3));
+		PageNovoUsuario.nome(driver).sendKeys(ExcelUtils.getCellData(1, 4));
+		PageNovoUsuario.sobreNome(driver).sendKeys(ExcelUtils.getCellData(1, 5));
+		PageNovoUsuario.telefone(driver).sendKeys(ExcelUtils.getCellData(1, 6));
+		PageNovoUsuario.pais(driver).sendKeys(ExcelUtils.getCellData(1, 7));
+		PageNovoUsuario.cidade(driver).sendKeys(ExcelUtils.getCellData(1, 8));
+		PageNovoUsuario.endereco(driver).sendKeys(ExcelUtils.getCellData(1, 9));
+		PageNovoUsuario.estado(driver).sendKeys(ExcelUtils.getCellData(1, 10));
+		PageNovoUsuario.postal(driver).sendKeys(ExcelUtils.getCellData(1, 11));
+		PageNovoUsuario.aceita(driver).click();
+		PageNovoUsuario.registrar(driver).click();
 
 	}
 
@@ -34,20 +34,20 @@ public class Cadastro {
 		PageFactory.initElements(driver, HomePage.class);
 		PageFactory.initElements(driver, PageNovoUsuario.class);
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		PageNovoUsuario.usuario.sendKeys(ExcelUtils.getCellData(2, 0));
-		PageNovoUsuario.email.sendKeys(ExcelUtils.getCellData(2, 1));
-		PageNovoUsuario.senha.sendKeys(ExcelUtils.getCellData(2, 2));
-		PageNovoUsuario.confirmar.sendKeys(ExcelUtils.getCellData(2, 3));
-		PageNovoUsuario.nome.sendKeys(ExcelUtils.getCellData(2, 4));
-		PageNovoUsuario.sobreNome.sendKeys(ExcelUtils.getCellData(2, 5));
-		PageNovoUsuario.telefone.sendKeys(ExcelUtils.getCellData(2, 6));
-		PageNovoUsuario.pais.sendKeys(ExcelUtils.getCellData(2, 7));
-		PageNovoUsuario.cidade.sendKeys(ExcelUtils.getCellData(2, 8));
-		PageNovoUsuario.endereco.sendKeys(ExcelUtils.getCellData(2, 9));
-		PageNovoUsuario.estado.sendKeys(ExcelUtils.getCellData(2, 10));
-		PageNovoUsuario.postal.sendKeys(ExcelUtils.getCellData(2, 11));
-		PageNovoUsuario.aceita.click();
-		PageNovoUsuario.registrar.click();
+		PageNovoUsuario.usuario(driver).sendKeys(ExcelUtils.getCellData(2, 0));
+		PageNovoUsuario.email(driver).sendKeys(ExcelUtils.getCellData(2, 1));
+		PageNovoUsuario.senha(driver).sendKeys(ExcelUtils.getCellData(2, 2));
+		PageNovoUsuario.confirmar(driver).sendKeys(ExcelUtils.getCellData(2, 3));
+		PageNovoUsuario.nome(driver).sendKeys(ExcelUtils.getCellData(2, 4));
+		PageNovoUsuario.sobreNome(driver).sendKeys(ExcelUtils.getCellData(2, 5));
+		PageNovoUsuario.telefone(driver).sendKeys(ExcelUtils.getCellData(2, 6));
+		PageNovoUsuario.pais(driver).sendKeys(ExcelUtils.getCellData(2, 7));
+		PageNovoUsuario.cidade(driver).sendKeys(ExcelUtils.getCellData(2, 8));
+		PageNovoUsuario.endereco(driver).sendKeys(ExcelUtils.getCellData(2, 9));
+		PageNovoUsuario.estado(driver).sendKeys(ExcelUtils.getCellData(2, 10));
+		PageNovoUsuario.postal(driver).sendKeys(ExcelUtils.getCellData(2, 11));
+		PageNovoUsuario.aceita(driver).click();
+		PageNovoUsuario.registrar(driver).click();
 
 	}
 }

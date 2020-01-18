@@ -1,51 +1,70 @@
 package br.com.rsinet.hub_tdd.pageObject;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 
 public class PageNovoUsuario {
+	private static WebElement elemento = null;
 
-	@FindBy(how = How.NAME, using = "usernameRegisterPage")
-	public static WebElement usuario;
+	public static WebElement usuario(WebDriver driver) {
+		return elemento = driver.findElement(By.name("usernameRegisterPage"));
+	}
 
-	@FindBy(how = How.NAME, using = "emailRegisterPage")
-	public static WebElement email;
+	public static WebElement email(WebDriver driver) {
+		return elemento = driver.findElement(By.name("emailRegisterPage"));
+	}
 
-	@FindBy(how = How.NAME, using = "passwordRegisterPage")
-	public static WebElement senha;
+	public static WebElement senha(WebDriver driver) {
+		return elemento = driver.findElement(By.name("passwordRegisterPage"));
+	}
 
-	@FindBy(how = How.NAME, using = "confirm_passwordRegisterPage")
-	public static WebElement confirmar;
+	public static WebElement confirmar(WebDriver driver) {
+		return elemento = driver.findElement(By.name("confirm_passwordRegisterPage"));
+	}
 
-	@FindBy(how = How.NAME, using = "first_nameRegisterPage")
-	public static WebElement nome;
+	public static WebElement nome(WebDriver driver) {
+		return elemento = driver.findElement(By.name("first_nameRegisterPage"));
+	}
 
-	@FindBy(how = How.NAME, using = "last_nameRegisterPage")
-	public static WebElement sobreNome;
+	public static WebElement sobreNome(WebDriver driver) {
+		return elemento = driver.findElement(By.name("last_nameRegisterPage"));
+	}
 
-	@FindBy(how = How.NAME, using = "phone_numberRegisterPage")
-	public static WebElement telefone;
+	public static WebElement telefone(WebDriver driver) {
+		return elemento = driver.findElement(By.name("phone_numberRegisterPage"));
+	}
 
-	@FindBy(how = How.CSS, using = ".sec-view div select")
-	public static WebElement pais;
+	public static WebElement pais(WebDriver driver) {
+		return elemento = driver.findElement(By.cssSelector(".sec-view div select"));
+	}
 
-	@FindBy(how = How.NAME, using = "cityRegisterPage")
-	public static WebElement cidade;
+	public static WebElement cidade(WebDriver driver) {
+		return elemento = driver.findElement(By.name("cityRegisterPage"));
+	}
 
-	@FindBy(how = How.NAME, using = "addressRegisterPage")
-	public static WebElement endereco;
+	public static WebElement endereco(WebDriver driver) {
+		return elemento = driver.findElement(By.name("addressRegisterPage"));
+	}
 
-	@FindBy(how = How.NAME, using = "state_/_province_/_regionRegisterPage")
-	public static WebElement estado;
+	public static WebElement estado(WebDriver driver) {
+		return elemento = driver.findElement(By.name("state_/_province_/_regionRegisterPage"));
+	}
 
-	@FindBy(how = How.NAME, using = "postal_codeRegisterPage")
-	public static WebElement postal;
+	public static WebElement postal(WebDriver driver) {
+		return elemento = driver.findElement(By.name("postal_codeRegisterPage"));
+	}
 
-	@FindBy(how = How.CSS, using = ".sec-view div input[type=checkbox]")
-	public static WebElement aceita;
+	public static WebElement aceita(WebDriver driver) {
+		return elemento = driver.findElement(By.cssSelector(".sec-view div input[type=checkbox]"));
+	}
 
-	@FindBy(how = How.ID, using = "register_btnundefined")
-	public static WebElement registrar;
+	public static WebElement registrar(WebDriver driver) {
+		return elemento = driver.findElement(By.id("register_btnundefined"));
+	}
+
+	public static WebElement txt_falhou(WebDriver driver) {
+		return elemento = driver.findElement(By.xpath("//*[@id=\"formCover\"]/div[1]/div[2]/sec-view[1]/div/label"));
+	}
 
 }
