@@ -54,20 +54,20 @@ public class Login {
 
 	}
 
-//	@Test
-//	public void cadastroFall() throws Exception {
-//		expectativa = ExcelUtils.getCellData(2, 2);
-//		HomePage.clickLogin(driver).click();
-//		WebElement element = driver.findElement(By.xpath("/html/body/login-modal/div/div/div[3]/a[2]"));
-//		JavascriptExecutor executor = (JavascriptExecutor) driver;
-//		executor.executeScript("arguments[0].click();", element);
-//		Cadastro.preencherCadastroFall(driver);
-//		texto = ExcelUtils.getCellData(2, 3);
-//		// wait.until(ExpectedConditions.invisibilityOfAllElements(PageNovoUsuario.txt_falhou(driver)));
-//		String erro = PageNovoUsuario.txt_falhou(driver).getText();
-//		ExcelUtils.setCellData(erro, 2, 12);
-//		Assert.assertNotSame(expectativa, texto);
-//	}
+	@Test
+	public void cadastroFall() throws Exception {
+		expectativa = ExcelUtils.getCellData(2, 2);
+		HomePage.clickLogin(driver).click();
+		WebElement element = driver.findElement(By.xpath("/html/body/login-modal/div/div/div[3]/a[2]"));
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", element);
+		Cadastro.preencherCadastroFall(driver);
+		texto = ExcelUtils.getCellData(2, 3);
+		// wait.until(ExpectedConditions.invisibilityOfAllElements(PageNovoUsuario.txt_falhou(driver)));
+		String erro = PageNovoUsuario.txt_falhou(driver).getText();
+		ExcelUtils.setCellData(erro, 2, 12);
+		Assert.assertNotSame(expectativa, texto);
+	}
 
 	@After
 	public void fim() {

@@ -3,6 +3,7 @@ package br.com.rsinet.hub_tdd.validacao;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +17,8 @@ public class PesquisaPelaLupa {
 	public WebDriver driver = new ChromeDriver();
 	public WebDriverWait wait = new WebDriverWait(driver, 10);
 	private int pos;
+	String expectativa;
+	String atual;
 
 	@Before
 	public void antes() throws Exception {
@@ -27,14 +30,22 @@ public class PesquisaPelaLupa {
 
 	@Test
 	public void pesquisa() throws Exception {
+		expectativa = "http://www.advantageonlineshopping.com/#/product/8?viewAll=laptops";
 		pos = 1;
 		Pesquisar.pelaLupa(driver, pos);
+		atual = driver.getCurrentUrl();
+		System.out.println(atual);
+		Assert.assertEquals(expectativa, atual);
 	}
 
 	@Test
 	public void pesquisaFall() throws Exception {
+		expectativa = "http://www.advantageonlineshopping.com/#/search/?viewAll=apple";
 		pos = 7;
 		Pesquisar.pelaLupa(driver, pos);
+		Thread.sleep(3000);
+		atual = driver.getCurrentUrl();
+		Assert.assertEquals(expectativa, atual);
 
 	}
 

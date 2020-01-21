@@ -10,8 +10,8 @@ import br.com.rsinet.hub_tdd.pageObject.PageNovoUsuario;
 
 public class Cadastro {
 	public static void preencherCadastroPass(WebDriver driver) throws Exception {
-		PageFactory.initElements(driver, HomePage.class);
 		PageFactory.initElements(driver, PageNovoUsuario.class);
+		PageFactory.initElements(driver, HomePage.class);
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
 		PageNovoUsuario.usuario(driver).sendKeys(ExcelUtils.getCellData(1, 0));
 		PageNovoUsuario.email(driver).sendKeys(ExcelUtils.getCellData(1, 1));
