@@ -23,7 +23,7 @@ public class PesquisaPageHome {
 	public Actions acao = new Actions(driver);
 	String expectativa;
 	String atual;
-	String nomePrint = "printHomePage";
+	String nomePrint = "printHomePage.jpg";
 	
 
 	@Before
@@ -58,7 +58,7 @@ public class PesquisaPageHome {
 		PageCategoria.selecionaDisplay(driver).click();
 		atual = driver.findElement(By.xpath("/html/body/div[3]/section/article/div[3]/div/div/div[3]/label/span"))
 				.getText();
-		nomePrint = "pesquisaFalha";
+		nomePrint = "pesquisaFalha.jpg";
 		Assert.assertEquals(expectativa, atual);
 
 	}

@@ -15,7 +15,7 @@ public class RobotPrint {
 
 		try {
 			Robot robot = new Robot();
-			BufferedImage tela = robot.createScreenCapture(new Rectangle(1000, 1000));
+			BufferedImage tela = robot.createScreenCapture(new Rectangle(1000, 1200));
 			ImageIO.write(tela, "jpg", new File("target/" + nomePrint));
 
 		} catch (AWTException e) {
