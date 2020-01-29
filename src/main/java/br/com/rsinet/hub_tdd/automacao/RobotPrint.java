@@ -15,7 +15,7 @@ public class RobotPrint {
 
 		try {
 			Robot robot = new Robot();
-			BufferedImage tela = robot.createScreenCapture(new Rectangle(700, 1000));
+			BufferedImage tela = robot.createScreenCapture(new Rectangle(1000, 1000));
 			ImageIO.write(tela, "jpg", new File(
 					"C:\\\\Users\\\\saulo.silva\\\\Downloads\\\\hub_TDD_BDD-master\\\\hub_TDD_BDD-master\\\\src\\\\main\\\\java\\\\arquivos\\\\\\cadastroPass.jpg"));
 

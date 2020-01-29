@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.rsinet.hub_tdd.automacao.Cadastro;
+import br.com.rsinet.hub_tdd.automacao.RobotPrint;
 import br.com.rsinet.hub_tdd.leituraExcel.Constant;
 import br.com.rsinet.hub_tdd.leituraExcel.ExcelUtils;
 import br.com.rsinet.hub_tdd.pageObject.HomePage;
@@ -71,8 +72,8 @@ public class Login {
 
 	@After
 	public void fim() {
-		// RobotPrint.pegarTela();
-		// driver.close();
+		 RobotPrint.pegarTela();
+		 driver.close();
 	}
 
 }

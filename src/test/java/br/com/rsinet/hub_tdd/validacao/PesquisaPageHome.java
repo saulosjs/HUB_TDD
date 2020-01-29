@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import br.com.rsinet.hub_tdd.automacao.Pesquisar;
+import br.com.rsinet.hub_tdd.automacao.RobotPrint;
 import br.com.rsinet.hub_tdd.leituraExcel.Constant;
 import br.com.rsinet.hub_tdd.pageObject.HomePage;
 import br.com.rsinet.hub_tdd.pageObject.PageCategoria;
@@ -62,7 +63,7 @@ public class PesquisaPageHome {
 
 	@After
 	public void fim() {
-//		RobotPrint.pegarTela();
+		RobotPrint.pegarTela();
 		driver.close();
 	}
 
