@@ -11,13 +11,12 @@ import javax.imageio.ImageIO;
 
 public class RobotPrint {
 
-	public static void pegarTela() {
+	public static void pegarTela(String nomePrint) {
 
 		try {
 			Robot robot = new Robot();
 			BufferedImage tela = robot.createScreenCapture(new Rectangle(1000, 1000));
-			ImageIO.write(tela, "jpg", new File(
-					"C:\\\\Users\\\\saulo.silva\\\\Downloads\\\\hub_TDD_BDD-master\\\\hub_TDD_BDD-master\\\\src\\\\main\\\\java\\\\arquivos\\\\\\cadastroPass.jpg"));
+			ImageIO.write(tela, "jpg", new File("target/" + nomePrint));
 
 		} catch (AWTException e) {
 			e.printStackTrace();

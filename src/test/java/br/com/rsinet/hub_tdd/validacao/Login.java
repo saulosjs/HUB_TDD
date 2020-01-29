@@ -27,6 +27,7 @@ public class Login {
 	WebDriverWait wait = new WebDriverWait(driver, 10);
 	public String texto = "";
 	public String expectativa = "";
+	public String nomePrint = "cadastro";
 
 	@Before
 	public void antes() throws Exception {
@@ -68,11 +69,12 @@ public class Login {
 		String erro = PageNovoUsuario.txt_falhou(driver).getText();
 		ExcelUtils.setCellData(erro, 2, 12);
 		Assert.assertNotSame(expectativa, texto);
+		nomePrint = "cadastroFalha";
 	}
 
 	@After
 	public void fim() {
-		 RobotPrint.pegarTela();
+		 RobotPrint.pegarTela(nomePrint);
 		 driver.close();
 	}
 

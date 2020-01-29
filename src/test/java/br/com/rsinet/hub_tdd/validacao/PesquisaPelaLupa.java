@@ -20,6 +20,7 @@ public class PesquisaPelaLupa {
 	private int pos;
 	String expectativa;
 	String atual;
+	String nomePrint = "PesquisaLupa";
 
 	@Before
 	public void antes() throws Exception {
@@ -46,13 +47,14 @@ public class PesquisaPelaLupa {
 		Pesquisar.pelaLupa(driver, pos);
 		Thread.sleep(3000);
 		atual = driver.getCurrentUrl();
+		nomePrint = "pesquisaLupaFalha";
 		Assert.assertEquals(expectativa, atual);
 
 	}
 
 	@After
 	public void fim() {
-		 RobotPrint.pegarTela();
+		 RobotPrint.pegarTela(nomePrint);
 		driver.close();
 	}
 }

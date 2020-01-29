@@ -23,6 +23,8 @@ public class PesquisaPageHome {
 	public Actions acao = new Actions(driver);
 	String expectativa;
 	String atual;
+	String nomePrint = "printHomePage";
+	
 
 	@Before
 	public void site() throws Exception {
@@ -56,14 +58,14 @@ public class PesquisaPageHome {
 		PageCategoria.selecionaDisplay(driver).click();
 		atual = driver.findElement(By.xpath("/html/body/div[3]/section/article/div[3]/div/div/div[3]/label/span"))
 				.getText();
-		System.out.println(atual);
+		nomePrint = "pesquisaFalha";
 		Assert.assertEquals(expectativa, atual);
 
 	}
 
 	@After
 	public void fim() {
-		RobotPrint.pegarTela();
+		RobotPrint.pegarTela(nomePrint);
 		driver.close();
 	}
 
